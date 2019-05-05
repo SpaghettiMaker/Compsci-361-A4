@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ba50129c-e65b-4338-b0c5-aee6195f783f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>preprocess.py</StartupFile>
+    <StartupFile>A4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
