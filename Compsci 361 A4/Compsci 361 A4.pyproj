@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ba50129c-e65b-4338-b0c5-aee6195f783f</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Compsci_361_A4.py</StartupFile>
+    <StartupFile>preprocess.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Compsci_361_A4.py" />
+    <Compile Include="A4.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="preprocess.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda36-64" />
