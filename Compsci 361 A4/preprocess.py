@@ -1,12 +1,10 @@
 import json
 import re
 from collections import Counter
+
 # frequent meaningless words from nltk
 stop_words = {'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', 'should', 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', 'couldn', 'didn', 'doesn', 'hadn', 'hasn', 'haven', 'isn', 'ma', 'mightn', 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn'}
-#A_word_count = Counter() 
-#B_word_count = Counter() 
-#E_word_count = Counter() 
-#V_word_count = Counter()
+
 word_count = [Counter(), Counter(), Counter(), Counter()] # A, B, E, V
 super_dict = Counter()
 temp = []
@@ -18,6 +16,7 @@ with open('trg.csv', 'r') as file:
         a = line.split(",")
         a[2] = a[2][1:-2] # remove ""
         temp = [i for i in re.findall(r"[\w]+", a[2]) if i not in stop_words]
+
         flag = 0 
         # if key exists i.e. word has occured before add one to value else init with word=key, value=1
         index_num = classes.index(a[1])
